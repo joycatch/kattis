@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+// https://open.kattis.com/problems/aaah
+
 public class Aaah {
 
     public static void main(String[] args) throws IOException {
