@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+// https://open.kattis.com/problems/jazzitup
+
 public class JazzItUp {
 
     public static void main(String[] args) throws IOException {
