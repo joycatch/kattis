@@ -3,7 +3,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 
 // https://open.kattis.com/problems/avoidland
@@ -46,16 +45,14 @@ public class Avoidland {
                 columnMap.get(columns[i]).add(i);
             }
         }
-        Collections.sort(rowMap.get(0));
-        Collections.sort(rowMap.get(2));
-        Collections.sort(columnMap.get(0));
-        Collections.sort(columnMap.get(2));
         int moves = 0;
-        for (int i = 0; i < rowMap.get(0).size(); i++) {
-            moves += Math.abs(rowMap.get(0).get(i) - rowMap.get(2).get(i));
-        }
-        for (int i = 0; i < columnMap.get(0).size(); i++) {
-            moves += Math.abs(columnMap.get(0).get(i) - columnMap.get(2).get(i));
+        for (int i = 0; i < Math.max(rowMap.get(0).size(), columnMap.get(0).size()); i++) {
+            if (i < rowMap.get(0).size()) {
+                moves += Math.abs(rowMap.get(0).get(i) - rowMap.get(2).get(i));
+            }
+            if (i < columnMap.get(0).size()) {
+                moves += Math.abs(columnMap.get(0).get(i) - columnMap.get(2).get(i));
+            }
         }
         System.out.println(moves);
     }
